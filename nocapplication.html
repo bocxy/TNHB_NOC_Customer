@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>NOC - Customer Dashboard</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css"/>
+		<link rel="stylesheet" type="text/css" href="src/plugins/jquery-steps/jquery.steps.css"/>
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../assets/js/config.js"></script>
+
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="src/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css"
+  />
+
+
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+  <div class="d-flex align-items-center justify-content-between">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="assets/img/tnhb_logo.png" alt="">
+      <span class="d-none d-lg-block"></span>
+    </a>
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+  </div><!-- End Logo -->
+
+  <div class="search-bar">
+    <form class="search-form d-flex align-items-center" method="POST" action="#">
+      <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+      <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+    </form>
+  </div><!-- End Search Bar -->
+
+  <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
+
+      <li class="nav-item d-block d-lg-none">
+        <a class="nav-link nav-icon search-bar-toggle " href="#">
+          <i class="bi bi-search"></i>
+        </a>
+      </li><!-- End Search Icon-->
+      <li class="nav-item dropdown pe-3">
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
+          <span class="d-none d-md-block  ps-2">Applicant Name</span>
+        </a>
+
+      </li>
+
+    </ul>
+  </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="apphistory.html">
+          <i class="bi-exclamation-square"></i>
+          <span>Applications History</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Logout</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+          <li class="breadcrumb-item active">Applications</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Applicant Details</h5>
+              <div class="mobile-menu-overlay"></div>
+
+              <div class="wizard-content">
+                    <form class="tab-wizard wizard-circle wizard">
+                      <h5>Personal Info</h5>
+                      <section>
+                        <div class="row">
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Application Type <span class="required">*</span>:</label>
+                              <select class="custom-select form-control" id="seeAnotherField2">
+
+                                <option value="no">Select</option>
+                                <option value="yes">Legal heir</option>
+                                <option value="no">Land Owner</option>
+                                <option value="no">Subsequent purchaser</option>
+
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Purpose <span class="required">*</span>:</label>
+                              <select class="custom-select form-control">
+
+                                <option value="no">Select</option>
+                                <option value="Planning Permission / Reclassification">Planning Permission / Reclassification</option>
+                                <option value="Patta">Patta</option>
+                                <option value="Others">Others</option>
+
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>First Name <span class="required">*</span>:</i></label>
+                              <input type="text" class="form-control" />
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Last Name <span class="required">*</span>:</label>
+                              <input type="text" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Email Address <span class="required">*</span>:</label>
+                              <input type="email" class="form-control" />
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Phone Number <span class="required">*</span>:</label>
+                              <input type="text" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Address <span class="required">*</span>:</label>
+                              <input type="text" class="form-control" />
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>District <span class="required">*</span>:</label>
+                            <select  class="form-control" id="seeAnotherField1">
+                              <option value="no">Select</option>
+                              <option value="yes">Chennai</option>
+                              <option value="yes">Chengalpattu</option>
+                              <option value="yes">Kancheepuram</option>
+                              <option value="yes">Thiruvallur</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group" id="otherFieldDiv1">
+                          <label>Taluk : <span class="required">*</span>:</label>
+                          <!-- <input type="text" class="form-control" id="otherField1"><br> -->
+                          <select  class="form-control" id="otherField1">
+                            <option >Select</option>
+                            <option >Besant Nagar</option>
+                            <option >Anna Nagar</option>
+                            <option >Ambattur</option>
+
+                          </select>
+                          <label>Village :</label>
+                          <!-- <input type="text" class="form-control" id="otherField1"><br> -->
+                          <select  class="form-control" id="otherField1">
+                            <option >Select</option>
+                            <option >Ayanavaram</option>
+                            <option >Aminjikarai</option>
+
+
+                          </select>
+                          </div>
+
+                    </section>
+
+
+                      <!-- Step 2 -->
+                      <h5>Documentation</h5>
+                      <section>
+                        <!-- <option >Survey Number</option>
+                        <option >Old with New Survey Number</option>
+                        <option >Town Survey Number</option>
+                         -->
+
+
+
+
+                        <div class="row">
+
+
+
+
+                            <div class="form-group">
+                              <label>Survey Options<span class="required">*</span>:</label>
+                              <select class="form-control" id="snumber" onchange="showFields()">
+                                <option>Select an option</option>
+                                <option value="survey">Survey Number</option>
+                                <option value="old_new">Old with New Survey Number</option>
+                                <option value="town">Town Survey Number</option>
+                              </select>
+                            </div>
+
+
+                          <div class="form-group">
+                          <div id="surveyFields" style="display: none;">
+                            <label>Survey Number <span class="required">*</span>:</label>
+                            <input type="text" value="AAA897456,AAA897456" data-role="tagsinput" />
+                          </div>
+                          </div>
+
+                          <div class="form-group">
+                          <div id="oldNewFields" style="display: none;">
+                            <label>Old Survey No <span class="required">*</span>:</label>
+                            <input type="text" value="AAA897456,AAA897456" data-role="tagsinput" />
+
+                            <label>New Survey No <span class="required">*</span>:</label>
+                            <input type="text" value="AAA897456,AAA897456" data-role="tagsinput" />
+                          </div>
+                          </div>
+                          <div class="form-group">
+                          <div id="townFields" style="display: none;">
+                            <label>Town Survey Number<span class="required">*</span>:</label>
+                            <input type="text" value="AAA897456,AAA897456" data-role="tagsinput" />
+                          </div>
+                          </div>
+
+
+
+
+
+                          <div class="info">
+                            <p><strong>Note:</strong><br>i.“Multiple survey numbers with subdivisions can be entered
+                              <br>For example 123A67/123/2B.
+                              <br>ii.For each survey number Rs.1800+GST will be applicable.</p>
+                          </div>
+
+
+                          <style>.info {
+                            background-color: #e7f3fe;
+                            border-left: 6px solid #2196F3;
+                          }</style>
+
+
+
+
+
+<style>
+.bootstrap-tagsinput .label-info {
+    background:#1d8df1 ;
+}
+
+</style>
+
+
+                          <div class="form-group">
+                            <label>Registration Document <span class="required">*</span>:</label>
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input">
+                              <label class="custom-file-label">Choose file</label>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label>Parent Document <span class="required">*</span>:</label>
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input">
+                              <label class="custom-file-label">Choose file</label>
+                            </div>
+                          </div>
+
+
+
+                            <div class="form-group"  id="otherFieldDiv2">
+                              <label> Legal Heir Document <span class="required">*</span>:</label>
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input">
+                                <label class="custom-file-label">Choose file</label>
+                              </div>
+                            </div>
+
+
+                          <div class="form-group">
+                            <label>Other Document <span class="required"></span>:</label>
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input">
+                              <label class="custom-file-label">Choose file</label>
+                            </div>
+                          </div>
+
+
+
+
+                       </div>
+                      </section>
+
+                      <!-- Step 3 -->
+                      <h5>Documentation</h5>
+                      <section>
+                        <div class="row">
+
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Extent of the plot/land(in sq.ft)<span class="required">*</span>:</label>
+                              <input type="text" class="form-control" />
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Units<span class="required">*</span>:</label>
+                              <select class="form-control" id="extentUnits">
+                                <option value="cent">Select</option>
+                                <option value="cent">Cent</option>
+                                <option value="sqft">Sq.ft</option>
+                                <option value="acre">Acre</option>
+                              </select>
+                            </div>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <div class="form-group">
+                              <label>whether this land is subject to any court case ?</label>
+                            <select class="form-control" id="seeAnotherField">
+                              <option value="no">NO</option>
+                              <option value="yes">YES</option>
+                            </select>
+                          </div>
+                          </div>
+
+
+                            <div class="form-group" id="otherFieldDiv">
+                              <label>Case Number</label>
+                              <input type="text" class="form-control" id="otherField"><br>
+                              <div class="form-group">
+                                <label>Attach Document</label>
+                                <div class="custom-file">
+                                  <input type="file" class="custom-file-input">
+                                  <label class="custom-file-label">Choose file</label>
+                                </div>
+                              </div>
+                              </div>
+
+
+                       </div>
+                      </section>
+
+                      <!-- Step 4 -->
+                      <h5>Review & Payment</h5>
+                      <section>
+                        <div class="row">
+                          <div class="row">
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>Application Type :</label>
+                                <select class="custom-select form-control">
+                                  <option value="Legal heir">Legal heir/Land Owner</option>
+                                <option value="Legal heir">Subsequent purchaser</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>Purpose :</label>
+                                <select class="custom-select form-control">
+                                  <option value="">Purpose</option>
+                                  <option value="Applying for Patta">Applying for Patta</option>
+                                  <option value="Applying for Loan">Applying for Loan</option>
+                                  <option value="Applying for Name change">Applying for Name change</option>
+                                  <option value="Court Quash">Court Quash</option>
+                                  <option value="fr">Applying for Government Department </option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>First Name :</label>
+                                <input type="text"  value="Yazhini"  class="form-control" />
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>Last Name :</label>
+                                <input type="text" value="Nadhan" class="form-control" />
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="row">
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>Email Address :</label>
+                                <input type="email" value="Yazhini@gmail.com" class="form-control" />
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>Phone Number :</label>
+                                <input type="text" value="78925252255"class="form-control" />
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>Address :</label>
+                                <input type="text" value="Chennai" class="form-control" />
+                              </div>
+                            </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>District :</label>
+                              <input type="text" value="Chennai"class="form-control" />
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Old Survey No :</label>
+                              <input type="text" value="AAA6598445544"class="form-control" />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>New Survey No :</label>
+                              <input type="text" value="AAA6598445544" class="form-control" />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Extent of the plot/land(in sq.ft) :</label>
+                              <input type="text" value="435" class="form-control" />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                          <div class="form-group">
+                            <label>Registration Document</label>
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input">
+                              <label class="custom-file-label">File 1</label>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label>Parent Document</label>
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input">
+                              <label class="custom-file-label">File 2</label>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                        <div class="col-md-12 mb-1">
+                          <div class="card">
+                              <h5 class="card-header">Confirming NOC</h5>
+                              <div class="card-body">
+                                <div class="mb-3 col-12 mb-0">
+                                <div class="alert alert-warning">
+                                  <h6 class="alert-heading fw-bold mb-1">Are you sure you want to Apply Noc?</h6>
+                                  <p class="mb-0">Once you Applied, there is no going back. Please be certain.</p>
+                                </div>
+                                </div>
+
+                      <form id="formAccountDeactivation" onsubmit="return false">
+                        <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="accountActivation" id="accountActivation"/>
+                        <label class="form-check-label" for="accountActivation">I confirm my Applying Noc</label>
+                        </div>
+                      </form>
+                  </div>
+                              <div class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_KcM2RxPniaCCOF/view" data-text="Pay Now" data-color="#528FF0" data-size="large">
+                                <script>
+                                  (function(){
+                                  var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+                                  if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+                                  s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+                                  rzp && rzp.init && rzp.init()}})();
+                                </script>
+                                </div>
+
+                              </div>
+
+                          </div>
+
+                        </div>
+                      </section>
+
+                    </form>
+                     <!-- success Popup html Start -->
+                <div
+                class="modal fade"
+                id="success-modal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body text-center font-18">
+                      <h3 class="mb-20">Form Submitted!</h3>
+                      <div class="mb-30 text-center">
+                        <img src="vendors/images/success.png" />
+                      </div>
+                      Your Application id 5682244.
+                      Confirmation message has been sent to your Email and Phone Number.
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-dismiss="modal" href="nocapplication.html"
+                      >
+                        Done
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- success Popup html End -->
+                  </div>
+                </div>
+
+
+
+             <!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>BOCXY</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+
+      Designed by <a href="https://bocxy.com/">Bocxy</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+		<script src="src/plugins/jquery-steps/jquery.steps.js"></script>
+		<script src="vendors/scripts/steps-setting.js"></script>
+    <script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+		<!-- switchery js -->
+		<script src="src/plugins/switchery/switchery.min.js"></script>
+		<!-- bootstrap-tagsinput js -->
+		<script src="src/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+		<!-- bootstrap-touchspin js -->
+		<script src="src/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+		<script src="vendors/scripts/advanced-components.js"></script>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+
+    <script>
+      function showFields() {
+        var selectedOption = document.getElementById("snumber").value;
+        var surveyFields = document.getElementById("surveyFields");
+        var oldNewFields = document.getElementById("oldNewFields");
+        var townFields = document.getElementById("townFields");
+
+        surveyFields.style.display = "none";
+        oldNewFields.style.display = "none";
+        townFields.style.display = "none";
+
+        if (selectedOption === "survey") {
+          surveyFields.style.display = "block";
+        } else if (selectedOption === "old_new") {
+          oldNewFields.style.display = "block";
+        } else if (selectedOption === "town") {
+          townFields.style.display = "block";
+        }
+      }
+    </script>
+
+    <script>
+      $("#seeAnotherField").change(function() {
+     if ($(this).val() == "yes") {
+       $('#otherFieldDiv').show();
+       $('#otherField').attr('required','');
+       $('#otherField').attr('data-error', 'This field is required.');
+     } else {
+       $('#otherFieldDiv').hide();
+       $('#otherField').removeAttr('required');
+       $('#otherField').removeAttr('data-error');
+       $('#commentsfield').show();
+       $('#otherField').attr('required','');
+       $('#otherField').attr('data-error', 'This field is required.');
+     }
+   });
+   $("#seeAnotherField").trigger("change");
+
+   $("#seeAnotherFieldGroup").change(function() {
+     if ($(this).val() == "yes") {
+       $('#otherFieldGroupDiv').show();
+       $('#otherField1').attr('required','');
+       $('#otherField1').attr('data-error', 'This field is required.');
+       $('#otherField2').attr('required','');
+       $('#otherField2').attr('data-error', 'This field is required.');
+     } else {
+       $('#otherFieldGroupDiv').hide();
+       $('#otherField1').removeAttr('required');
+       $('#otherField1').removeAttr('data-error');
+       $('#otherField2').removeAttr('required');
+       $('#otherField2').removeAttr('data-error');
+     }
+   });
+   $("#seeAnotherFieldGroup").trigger("change");
+ </script>
+ <script>
+  $("#seeAnotherField1").change(function() {
+ if ($(this).val() == "yes") {
+   $('#otherFieldDiv1').show();
+   $('#otherField1').attr('required','');
+   $('#otherField1').attr('data-error', 'This field is required.');
+ } else {
+   $('#otherFieldDiv1').hide();
+   $('#otherField1').removeAttr('required');
+   $('#otherField1').removeAttr('data-error');
+   $('#commentsfield').show();
+   $('#otherField1').attr('required','');
+   $('#otherField1').attr('data-error', 'This field is required.');
+ }
+});
+$("#seeAnotherField1").trigger("change");
+
+$("#seeAnotherFieldGroup").change(function() {
+ if ($(this).val() == "yes") {
+   $('#otherFieldGroupDiv1').show();
+   $('#otherField1').attr('required','');
+   $('#otherField1').attr('data-error', 'This field is required.');
+   $('#otherField2').attr('required','');
+   $('#otherField2').attr('data-error', 'This field is required.');
+ } else {
+   $('#otherFieldGroupDiv1').hide();
+   $('#otherField1').removeAttr('required');
+   $('#otherField1').removeAttr('data-error');
+   $('#otherField2').removeAttr('required');
+   $('#otherField2').removeAttr('data-error');
+ }
+});
+$("#seeAnotherFieldGroup1").trigger("change");
+</script>
+
+<script>
+  $("#seeAnotherField2").change(function() {
+ if ($(this).val() == "yes") {
+   $('#otherFieldDiv2').show();
+   $('#otherField2').attr('required','');
+   $('#otherField2').attr('data-error', 'This field is required.');
+ } else {
+   $('#otherFieldDiv2').hide();
+   $('#otherField2').removeAttr('required');
+   $('#otherField2').removeAttr('data-error');
+   $('#commentsfield').show();
+   $('#otherField2').attr('required','');
+   $('#otherField2').attr('data-error', 'This field is required.');
+ }
+});
+$("#seeAnotherField2").trigger("change");
+
+$("#seeAnotherFieldGroup").change(function() {
+ if ($(this).val() == "yes") {
+   $('#otherFieldGroupDiv2').show();
+   $('#otherField2').attr('required','');
+   $('#otherField2').attr('data-error', 'This field is required.');
+   $('#otherField3').attr('required','');
+   $('#otherField3').attr('data-error', 'This field is required.');
+ } else {
+   $('#otherFieldGroupDiv1').hide();
+   $('#otherField2').removeAttr('required');
+   $('#otherField2').removeAttr('data-error');
+   $('#otherField3').removeAttr('required');
+   $('#otherField3').removeAttr('data-error');
+ }
+});
+$("#seeAnotherFieldGroup2").trigger("change");
+</script>
+
+
+
+</body>
+
+</html>
